@@ -1,0 +1,22 @@
+[
+  {
+    "model": "webapp.todolist",
+    "pk": 1,
+    "fields": {
+      "title": "Заехать покушать",
+      "description": "                в 13.00",
+      "status": "new",
+      "due_date": "2022-12-21"
+    }
+  },
+  {
+    "model": "webapp.todolist",
+    "pk": 2,
+    "fields": {
+      "title": "Купить машину",
+      "description": "Kia K8 (2023), 2.5л ",
+      "status": "new",
+      "due_date": "2023-02-25"
+    }
+  }
+]

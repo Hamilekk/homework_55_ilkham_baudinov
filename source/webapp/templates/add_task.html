@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Add{% endblock %}
+</head>
+<body>
+{% block content %}
+    <h3>Добавление новой задачи</h3>
+    <div class="container main-container">
+        <form method="post" action="{% url 'task_add' %}">
+            {% include 'partial/edit_and_add_task_form.html' with button_text='Созд ать' %}
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

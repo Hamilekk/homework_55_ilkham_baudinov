@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block menu %}
+    <a class="navbar-brand" href="{% url 'task_add' %}">Добавить задачу</a>
+{% endblock %}
+{% block content %}
+    <form method="POST" action="{% url 'delete_selected_tasks' %}">
+        {% csrf_token %}
+        <div class="form-group">
+            {% for task in tasks %}
+                <div class="form-check">
+                    <input type="checkbox" name="tasks_to_delete" value="{{ task.pk }}" class="form-check-input"/>
+                    <label class="form-check-label">
+                        Заголовок: {{ task.title }}
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn btn-danger mt-3">Удалить выбранные задачи</button>
+    </form>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}index page{% endblock %}
+</head>
+<body>
+{% block menu %}
+    <a class="navbar-brand" href="{% url 'task_list' %}">Массовое удаление</a>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        {% for task in tasks %}
+            <h5>Заголовок: {{ task.title }}</h5>
+            <h5>Статус: {{ task.status }}</h5>
+            <p><a class="task_link" href="{% url 'task_edit' task.pk %}">Изменить статус задачи</a><br>
+                <a class="task_link" href="{% url 'task_detail' task.pk %}">Подробнее....</a></p>
+            <hr>
+
+        {% endfor %}
+    </div>
+{% endblock %}
+</body>
+</html>

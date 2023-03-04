@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}Edit{% endblock %}
+</head>
+<body>
+{% block content %}
+    <h3>Изменение задачи</h3>
+    <form action="{% url 'task_edit' task.pk %}" method="post">
+        {% include 'partial/edit_and_add_task_form.html' with button_text='Редактировать' %}
+    </form>
+{% endblock %}
+</body>
+</html>
